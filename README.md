@@ -20,7 +20,7 @@
 
 #### Data Type
 
-- INT
+- **INT**
   - Stands for integer, it's a whole number.
-- Varchar
-  - Stands for Variable-length string.
+- **Varchar**
+  - Stands for **Variable-length** string.
