@@ -24,3 +24,9 @@
   - Stands for integer, it's a whole number.
 - **Varchar**
   - Stands for **Variable-length** string.
+
+## Insert Data
+
+- Choose the columns you would like to add the data first.
+- Remember keeping the data type.
+- After defining the columns we would like to insert data, we can inject multiple data with several values.
