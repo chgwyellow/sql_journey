@@ -9,14 +9,14 @@
 
 ### Database
 
-- Database contents lots of tables, so you can say database is just **a bunch of tables**.
-- The key word "**USE**" can specify the database we would like to use, and "**SELECT**" can tell us what is the database we are using now.
+- A database contains lots of tables, so you can say a database is just **a bunch of tables**.
+- The keyword "**USE**" can specify the database we would like to use, and "**SELECT**" can tell us which database we are using now.
 - In GUI, double click the database can switch database easily.
 
 ### Table
 
 - The true heart of SQL!
-- a collection of related data held in a **structured** format within a database.
+- It's a collection of related data held in a **structured** format within a database.
 
 #### Data Type
 
@@ -24,41 +24,56 @@
   - Stands for integer, it's a whole number.
 - **Varchar**
   - Stands for **Variable-length** string.
-  - Using single quote **'This is a string'** instead of double quote **"Do not use this"**, if there is a single quote between '', it's time to use escape character **( \ )**, e.g. **'Domino\ 's pizza'**.
-  - We can use double quote in a string, e.g. **'She says "ha ha ha"'**.
+  - Use single quotes **'This is a string'** instead of double quotes **"Do not use this"**. If there is a single quote within the string, use the escape character **( \ )**, e.g. **'Domino\ 's pizza'**.
+  - We can use double quotes within a string, e.g. **'She says "ha ha ha"'**.
 
 ## Insert Data
 
-- Choose the columns you would like to add the data first.
-- Remember keeping the data type.
-- After defining the columns we would like to insert data, we can inject multiple data with several values.
-- Null is not a number, even not equal to zero.
-- The column which was not being specified will create the null value while inserting the data.
+- Choose the columns you would like to add data to first.
+- Remember to keep the correct data type.
+- After defining the columns we would like to insert data into, we can insert multiple rows with several VALUES statements.
+- NULL is not a number, not even equal to zero.
+- Columns that are not specified will have a NULL value when inserting data.
 
 ---
 
 ## Constraints
 
-- We can add constraints to limit the column condition
+- We can add constraints to limit the column conditions.
 
 ### NOT NULL
 
-- **NOT NULL** force the inserted data can not be an empty value.
+- **NOT NULL** forces the inserted data to not be an empty value (cannot be NULL).
 
 ### DEFAULT
 
-- **DEFAULT** will add the default value for the empty data.
-- **DEFAULT** can not replace to **NOT NULL** definitely, because we can set **NULL** manually.
+- **DEFAULT** will add a default value for empty data.
+- **DEFAULT** cannot replace **NOT NULL** completely, because we can still set **NULL** manually.
 
 ### PRIMARY KEY
 
-- Prevent the overlap data occur.
-- Usually used in id column.
-- Primary key must be unique and not null.
+- Prevents duplicate data from occurring.
+- Usually used in the id column.
+- A primary key must be unique and not null.
 
 ### AUTO INCREMENT
 
-- Get used to be a partner with Primary Key.
-- It will increase automatically from 1.
-- With Auto Increment, we don't need to assign the id or Primary Key value manually.
-- 
+- Usually used as a companion to Primary Key.
+- It will increase automatically starting from 1.
+- With AUTO_INCREMENT, we don't need to assign the id or Primary Key value manually.
+
+---
+
+## CRUD
+
+- It was made of four parts, create, read, update, and delete individually.
+
+### CREATE
+
+- **INSERT INTO** statement.
+
+### READ
+
+### UPDATE
+
+### DELETE
