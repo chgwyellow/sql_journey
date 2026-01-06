@@ -24,9 +24,28 @@
   - Stands for integer, it's a whole number.
 - **Varchar**
   - Stands for **Variable-length** string.
+  - Using single quote **'This is a string'** instead of double quote **"Do not use this"**, if there is a single quote between '', it's time to use escape character **( \ )**, e.g. **'Domino\ 's pizza'**.
+  - We can use double quote in a string, e.g. **'She says "ha ha ha"'**.
 
 ## Insert Data
 
 - Choose the columns you would like to add the data first.
 - Remember keeping the data type.
 - After defining the columns we would like to insert data, we can inject multiple data with several values.
+- Null is not a number, even not equal to zero.
+- The column which was not being specified will create the null value while inserting the data.
+
+---
+
+## Constraints
+
+- We can add constraints to limit the column condition
+
+### NOT NULL
+
+- **NOT NULL** force the inserted data can not be an empty value.
+
+### DEFAULT
+
+- **DEFAULT** will add the default value for the empty data.
+- **DEFAULT** can not replace to **NOT NULL** definitely, because we can set **NULL** manually.
