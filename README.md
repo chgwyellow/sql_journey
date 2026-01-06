@@ -49,3 +49,16 @@
 
 - **DEFAULT** will add the default value for the empty data.
 - **DEFAULT** can not replace to **NOT NULL** definitely, because we can set **NULL** manually.
+
+### PRIMARY KEY
+
+- Prevent the overlap data occur.
+- Usually used in id column.
+- Primary key must be unique and not null.
+
+### AUTO INCREMENT
+
+- Get used to be a partner with Primary Key.
+- It will increase automatically from 1.
+- With Auto Increment, we don't need to assign the id or Primary Key value manually.
+- 
