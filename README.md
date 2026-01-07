@@ -430,8 +430,11 @@ SELECT CONCAT_WS('!', 'hey', 'hi', 'lol') as 'test';
 #### SUBSTRING
 
 It takes a single larger string and returns a small portion of that string.
+
 The first position in SQL is **1** instead of 0.
+
 Without the length argument, it will get the string to the end.
+
 We can use negative number, and it counts backward from the end of the string.
 
 ```sql
