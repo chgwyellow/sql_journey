@@ -80,10 +80,22 @@
 
 ### UPDATE
 
+- **UPDATE ... SET ...** pair.
+- Add colon to separate the values you would like to change.
+- If there is no **WHERE** statement, this update will change all values in the column.
+- Before updating the value, remembering **SELECTING** the data you gonna change to confirm the real data.
+
 ### DELETE
+
+- 
 
 #### WHERE
 
 - It provides a condition to **filter** the particular data out.
 - **WHERE is not only limited with SELECT**.
 - The column in WHERE statement **doesn't have to** be selected in SELECT statement.
+
+#### Aliases
+
+- Can rename a column in the **SELECT** statement.
+- It won't change the original column name.
