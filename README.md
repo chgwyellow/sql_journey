@@ -1,103 +1,387 @@
-# Notes
+<div align="center">
 
-## What is Database?
+# SQL Mastery Journey
 
-- A structured set of computerized data with an accessible interface.
-- MySQL is actually not a database, it's a **database management system** which interacts with the database.
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-00758F?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![DBeaver](https://img.shields.io/badge/Tool-DBeaver-382923?style=flat-square&logo=dbeaver&logoColor=white)](https://dbeaver.io/)
+![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=flat-square)
+![Last Update](https://img.shields.io/badge/Updated-Jan%202026-green?style=flat-square)
 
-## Database and Tables
+**A comprehensive journey through SQL fundamentals and beyond**
 
-### Database
+*From basics to mastery - documenting every step of the SQL learning path*
 
-- A database contains lots of tables, so you can say a database is just **a bunch of tables**.
-- The keyword "**USE**" can specify the database we would like to use, and "**SELECT**" can tell us which database we are using now.
-- In GUI, double click the database can switch database easily.
-
-### Table
-
-- The true heart of SQL!
-- It's a collection of related data held in a **structured** format within a database.
-
-#### Data Type
-
-- **INT**
-  - Stands for integer, it's a whole number.
-- **Varchar**
-  - Stands for **Variable-length** string.
-  - Use single quotes **'This is a string'** instead of double quotes **"Do not use this"**. If there is a single quote within the string, use the escape character **( \ )**, e.g. **'Domino\ 's pizza'**.
-  - We can use double quotes within a string, e.g. **'She says "ha ha ha"'**.
-
-## Insert Data
-
-- Choose the columns you would like to add data to first.
-- Remember to keep the correct data type.
-- After defining the columns we would like to insert data into, we can insert multiple rows with several VALUES statements.
-- NULL is not a number, not even equal to zero.
-- Columns that are not specified will have a NULL value when inserting data.
+</div>
 
 ---
 
-## Constraints
+## Learning Contents
 
-- We can add constraints to limit the column conditions.
-
-### NOT NULL
-
-- **NOT NULL** forces the inserted data to not be an empty value (cannot be NULL).
-
-### DEFAULT
-
-- **DEFAULT** will add a default value for empty data.
-- **DEFAULT** cannot replace **NOT NULL** completely, because we can still set **NULL** manually.
-
-### PRIMARY KEY
-
-- Prevents duplicate data from occurring.
-- Usually used in the id column.
-- A primary key must be unique and not null.
-
-### AUTO INCREMENT
-
-- Usually used as a companion to Primary Key.
-- It will increase automatically starting from 1.
-- With AUTO_INCREMENT, we don't need to assign the id or Primary Key value manually.
+- [SQL Mastery Journey](#sql-mastery-journey)
+  - [Learning Contents](#learning-contents)
+  - [About This Project](#about-this-project)
+  - [Project Structure](#project-structure)
+  - [Learning Notes](#learning-notes)
+    - [What is Database?](#what-is-database)
+    - [Database and Tables](#database-and-tables)
+      - [Database](#database)
+      - [Table](#table)
+    - [Insert Data](#insert-data)
+    - [Constraints](#constraints)
+      - [NOT NULL](#not-null)
+      - [DEFAULT](#default)
+      - [PRIMARY KEY](#primary-key)
+      - [AUTO\_INCREMENT](#auto_increment)
+    - [CRUD Operations](#crud-operations)
+      - [CREATE](#create)
+      - [READ](#read)
+      - [UPDATE](#update)
+      - [DELETE](#delete)
+      - [WHERE Clause](#where-clause)
+      - [Aliases (AS)](#aliases-as)
 
 ---
 
-## CRUD
+## About This Project
 
-- It was made of four parts, create, read, update, and delete individually.
+This repository serves as my personal learning journal for mastering SQL. All queries are written and tested in **DBeaver** before being committed here for version control and future reference.
 
-### CREATE
+**Learning Approach**: Practice in DBeaver → Document here → Push to GitHub
 
-- **INSERT INTO** statement.
+---
 
-### READ
+## Project Structure
 
-- **SELECT** statement is the basic read method.
-- '**\***' is a sign which means **give me all columns**.
-- Provides the specific column name to retrieve related data.
+```
+SQL_Mastery_Journey/
+├── basics/          # Fundamental SQL syntax
+├── intermediate/    # Advanced SQL techniques
+├── advanced/        # Expert-level SQL topics
+├── challenges/      # SQL challenges and exercises
+└── README.md        # You are here!
+```
 
-### UPDATE
+---
 
-- **UPDATE ... SET ...** pair.
-- Add colon to separate the values you would like to change.
-- If there is no **WHERE** statement, this update will change all values in the column.
-- Before updating the value, remembering **SELECTING** the data you gonna change to confirm the real data.
+## Learning Notes
 
-### DELETE
+### What is Database?
 
-- **DELETE FROM** pair.
-- Must add the WHERE statement to narrow down the range or you will kill all rows of data!
-- Deleting all rows doesn't mean the table is gone.
+<table>
+<tr>
+<td>
 
-#### WHERE
+**Definition**
 
-- It provides a condition to **filter** the particular data out.
-- **WHERE is not only limited with SELECT**.
-- The column in WHERE statement **doesn't have to** be selected in SELECT statement.
+- A structured set of computerized data with an accessible interface
+- Organized collection of data that can be easily accessed, managed, and updated
 
-#### Aliases
+</td>
+</tr>
+<tr>
+<td>
 
-- Can rename a column in the **SELECT** statement.
-- It won't change the original column name.
+**MySQL vs Database**
+
+- MySQL is **NOT** a database itself
+- MySQL is a **Database Management System (DBMS)** that interacts with databases
+- Think of it as the tool that helps you manage your data
+
+</td>
+</tr>
+</table>
+
+---
+
+### Database and Tables
+
+#### Database
+
+<table>
+<tr>
+<td width="50%">
+
+**Key Concepts**
+
+- A database contains multiple tables
+- Think of it as **a bunch of tables** grouped together
+- Each database serves a specific application or purpose
+
+</td>
+<td width="50%">
+
+**Common Commands**
+
+```sql
+-- Switch database
+USE database_name;
+
+-- Check current database
+SELECT DATABASE();
+```
+
+</td>
+</tr>
+</table>
+
+> **GUI Tip**: In DBeaver or other SQL clients, double-click a database to switch to it easily!
+
+#### Table
+
+**The true heart of SQL!**
+
+A table is a collection of related data held in a **structured** format within a database.
+
+**Data Types**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **INT** | Integer - whole numbers | `42`, `1000`, `-5` |
+| **VARCHAR(n)** | Variable-length string | `'Hello World'`, `'SQL'` |
+| **DATE** | Date values | `'2026-01-07'` |
+| **DECIMAL(m,n)** | Decimal numbers | `19.99`, `100.50` |
+
+**String Handling Tips**
+
+> ⚠️ **Important**: Use single quotes `'text'` for strings in SQL, not double quotes!
+
+```sql
+-- ✅ Correct
+SELECT * FROM users WHERE name = 'John';
+
+-- ❌ Avoid
+SELECT * FROM users WHERE name = "John";
+
+-- Escape single quotes with backslash
+INSERT INTO restaurants (name) VALUES ('Domino\'s Pizza');
+
+-- Double quotes inside strings are fine
+INSERT INTO quotes (text) VALUES ('She said "Hello!"');
+```
+
+---
+
+### Insert Data
+
+<table>
+<tr>
+<td>
+
+**Key Points**
+
+1. Choose the columns you want to add data to first
+2. Remember to keep the correct data type
+3. You can insert multiple rows with several VALUES statements
+4. `NULL` is not a number, not even equal to zero
+5. Unspecified columns will have a `NULL` value
+
+</td>
+</tr>
+</table>
+
+**Syntax Example:**
+
+```sql
+-- Single insert
+INSERT INTO cats (name, age)
+VALUES ('Yoshi', 1);
+
+-- Multiple insert
+INSERT INTO cats (name, age)
+VALUES 
+  ('Yoshi', 1),
+  ('Keith', 5),
+  ('Joggy', 3);
+```
+
+---
+
+### Constraints
+
+Constraints are rules applied to columns to limit what data can be stored.
+
+#### NOT NULL
+
+```sql
+CREATE TABLE users (
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+```
+
+- Forces the column to **always** have a value
+- Cannot insert or update with `NULL`
+
+#### DEFAULT
+
+```sql
+CREATE TABLE products (
+    name VARCHAR(100),
+    status VARCHAR(20) DEFAULT 'active'
+);
+```
+
+- Provides a default value when no value is specified
+- ⚠️ **Note**: `DEFAULT` cannot replace `NOT NULL` completely - you can still manually set `NULL`
+
+#### PRIMARY KEY
+
+```sql
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+```
+
+**Characteristics:**
+
+- Must be **UNIQUE**
+- Cannot be **NULL**
+- Prevents duplicate data
+- Usually used for ID columns
+
+#### AUTO_INCREMENT
+
+```sql
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(100)
+);
+```
+
+- Perfect companion to `PRIMARY KEY`
+- Automatically increments starting from 1
+- No need to manually assign ID values
+
+---
+
+### CRUD Operations
+
+| Operation | SQL Command |
+|-----------|-------------|
+| **Create** | `INSERT INTO` |
+| **Read** | `SELECT` |
+| **Update** | `UPDATE ... SET` |
+| **Delete** | `DELETE FROM` |
+
+---
+
+#### CREATE
+
+```sql
+INSERT INTO table_name (column1, column2)
+VALUES (value1, value2);
+```
+
+---
+
+#### READ
+
+**Basic SELECT:**
+
+```sql
+-- Get all columns
+SELECT * FROM cats;
+
+-- Get specific columns
+SELECT name, age FROM cats;
+```
+
+> The `*` symbol means **"give me all columns"**
+
+---
+
+#### UPDATE
+
+```sql
+UPDATE table_name 
+SET column1 = value1, column2 = value2
+WHERE condition;
+```
+
+> ⚠️ **Warning**: If you omit the `WHERE` clause, **ALL rows** will be updated!
+
+**Best Practice:**
+
+```sql
+-- 1. First, SELECT to verify what you're changing
+SELECT * FROM cats WHERE name = 'Misty';
+
+-- 2. Then UPDATE
+UPDATE cats SET age = 14 WHERE name = 'Misty';
+
+-- 3. Verify the change
+SELECT * FROM cats WHERE name = 'Misty';
+```
+
+---
+
+#### DELETE
+
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+
+> 🚨 **DANGER**: Without a `WHERE` clause, you'll delete **ALL rows**!
+
+```sql
+-- ✅ Safe - deletes specific rows
+DELETE FROM cats WHERE age = 4;
+
+-- ⚠️ DANGEROUS - deletes everything!
+DELETE FROM cats;
+```
+
+**Important Notes:**
+
+- Deleting all rows doesn't delete the table itself
+- Use `DROP TABLE` to remove the entire table
+
+---
+
+#### WHERE Clause
+
+The `WHERE` clause filters data based on conditions.
+
+```sql
+SELECT * FROM cats WHERE age = 4;
+UPDATE cats SET breed = 'Tabby' WHERE age > 5;
+DELETE FROM cats WHERE name = 'Fluffy';
+```
+
+**Key Points:**
+
+- Works with `SELECT`, `UPDATE`, and `DELETE`
+- The column in `WHERE` doesn't have to be in the `SELECT` list
+- You can use comparison operators: `=`, `>`, `<`, `>=`, `<=`, `!=`
+
+---
+
+#### Aliases (AS)
+
+Rename columns in your query results without changing the actual table.
+
+```sql
+SELECT cat_id AS id, name AS cat_name
+FROM cats;
+```
+
+**Result:**
+
+```
+| id | cat_name |
+|----|----------|
+| 1  | Yoshi    |
+| 2  | Keith    |
+```
+
+> **Note**: This only changes the display name, not the actual column name in the database!
+
+---
+
+<div align="center">
+
+*Last Updated: January 2026*
+
+</div>
