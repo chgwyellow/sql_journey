@@ -87,7 +87,9 @@
 
 ### DELETE
 
-- 
+- **DELETE FROM** pair.
+- Must add the WHERE statement to narrow down the range or you will kill all rows of data!
+- Deleting all rows doesn't mean the table is gone.
 
 #### WHERE
 

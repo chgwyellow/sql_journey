@@ -41,3 +41,11 @@ UPDATE cats SET breed = 'British Shorthair' WHERE name = 'Ringo';
 
 UPDATE cats SET age = 12 WHERE breed = 'Maine Coon';
 
+-- Delete
+DELETE FROM <table> WHERE <condition>;
+
+DELETE FROM cats WHERE age = 4;
+
+DELETE FROM cats WHERE age = cat_id;
+
+DELETE FROM cats;
