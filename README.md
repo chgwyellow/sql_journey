@@ -39,6 +39,10 @@
       - [DELETE](#delete)
       - [WHERE Clause](#where-clause)
       - [Aliases (AS)](#aliases-as)
+    - [String Functions](#string-functions)
+      - [CONCAT](#concat)
+      - [CONCAT\_WS](#concat_ws)
+      - [SUBSTRING](#substring)
 
 ---
 
@@ -380,8 +384,66 @@ FROM cats;
 
 ---
 
-<div align="center">
+### String Functions
 
-*Last Updated: January 2026*
+#### CONCAT
 
-</div>
+Stands for concatenate, combining the string or text.
+
+```sql
+SELECT CONCAT(author_fname, '!!!') FROM books;
+```
+
+**Result:**
+
+```text
+| CONCAT(author_fname, '!!!') |
+|-----------------------------|
+| Jhumpa!!!                   |
+| Neil!!!                     |
+```
+
+> **Note**: If the argument is **NULL**, the final answer will be **NULL**.
+
+---
+
+#### CONCAT_WS
+
+The first argument is a separator and it will smooch the rest values.
+
+```sql
+SELECT CONCAT_WS('!', 'hey', 'hi', 'lol') as 'test';
+```
+
+**Result:**
+
+```text
+| test       |
+|------------|
+| hey!hi!lol |
+```
+
+> **Note**: If the argument is **NULL**, the **NULL** argument will not be smooched. Moreover, the separator can not be **NULL**.
+
+---
+
+#### SUBSTRING
+
+It takes a single larger string and returns a small portion of that string.
+The first position in SQL is **1** instead of 0.
+
+```sql
+-- formula
+SUBSTRING('string', <start_position>, <length>);
+
+--- example
+SELECT SUBSTRING('Hello World', 1, 4);
+```
+
+**Result:**
+
+```text
+| SUBSTRING('Hello World', 1, 4) |
+|--------------------------------|
+| Hell                           |
+```
