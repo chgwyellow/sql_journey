@@ -74,6 +74,16 @@
 
 ### READ
 
+- **SELECT** statement is the basic read method.
+- '**\***' is a sign which means **give me all columns**.
+- Provides the specific column name to retrieve related data.
+
 ### UPDATE
 
 ### DELETE
+
+#### WHERE
+
+- It provides a condition to **filter** the particular data out.
+- **WHERE is not only limited with SELECT**.
+- The column in WHERE statement **doesn't have to** be selected in SELECT statement.
