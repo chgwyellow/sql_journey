@@ -46,6 +46,7 @@
       - [REPLACE](#replace)
       - [REVERSE](#reverse)
       - [CHAR\_LENGTH](#char_length)
+      - [UPPER \& LOWER](#upper--lower)
 
 ---
 
@@ -516,6 +517,38 @@ SELECT CHAR_LENGTH('Hey!');
 | SELECT CHAR_LENGTH('Hey!') |
 |----------------------------|
 | 4                          |
+```
+
+---
+
+#### UPPER & LOWER
+
+Transfer the string to all uppercase or lowercase.
+
+```sql
+UPPER('string');
+SELECT UPPER('xddd');
+```
+
+**Result:**
+
+```text
+| SELECT UPPER('xddd') |
+|----------------------|
+| XDDD                 |
+```
+
+```sql
+LOWER('string');
+SELECT LOWER('OH NO!');
+```
+
+**Result:**
+
+```text
+| SELECT LOWER('OH NO!') |
+|------------------------|
+| oh no!                 |
 ```
 
 ---
