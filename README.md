@@ -43,6 +43,8 @@
       - [CONCAT](#concat)
       - [CONCAT\_WS](#concat_ws)
       - [SUBSTRING](#substring)
+      - [REPLACE](#replace)
+      - [REVERSE](#reverse)
 
 ---
 
@@ -453,3 +455,46 @@ SELECT SUBSTRING('Hello World', 1, 4);
 |--------------------------------|
 | Hell                           |
 ```
+
+---
+
+#### REPLACE
+
+It replaces a portion of string with some other replacement string.
+
+```sql
+REPLACE('string', from_str, to_str);
+SELECT REPLACE('Hello World!', 'H', 'h');
+```
+
+**Result:**
+
+```text
+| SELECT REPLACE('Hello World!', 'H', 'h'); |
+|-------------------------------------------|
+| hello World!                              |
+```
+
+---
+
+#### REVERSE
+
+It takes the string and reverse it all.
+
+If you pass **NULL**, and you get **NULL**.
+
+```sql
+REVERSE('string');
+SELECT REVERSE('Hello World!');
+```
+
+**Result:**
+
+```text
+| SELECT REVERSE('Hello World!'); |
+|---------------------------------|
+| !dlroW olleH                    |
+```
+
+---
+

@@ -27,3 +27,13 @@ SELECT CONCAT(
         '.'
 	) AS author_initial
 FROM books;
+
+-- REPLACE
+SELECT REPLACE('Hello World!', 'Hell', '@#$%');
+
+SELECT REPLACE(title, ' ', '-') FROM books;
+
+-- REVERSE
+SELECT REVERSE('Hello World!');
+
+SELECT REVERSE(author_fname) FROM books;
