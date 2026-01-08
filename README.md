@@ -45,6 +45,7 @@
       - [SUBSTRING](#substring)
       - [REPLACE](#replace)
       - [REVERSE](#reverse)
+      - [CHAR\_LENGTH](#char_length)
 
 ---
 
@@ -470,9 +471,9 @@ SELECT REPLACE('Hello World!', 'H', 'h');
 **Result:**
 
 ```text
-| SELECT REPLACE('Hello World!', 'H', 'h'); |
-|-------------------------------------------|
-| hello World!                              |
+| SELECT REPLACE('Hello World!', 'H', 'h') |
+|------------------------------------------|
+| hello World!                             |
 ```
 
 ---
@@ -491,10 +492,30 @@ SELECT REVERSE('Hello World!');
 **Result:**
 
 ```text
-| SELECT REVERSE('Hello World!'); |
-|---------------------------------|
-| !dlroW olleH                    |
+| SELECT REVERSE('Hello World!') |
+|--------------------------------|
+| !dlroW olleH                   |
 ```
 
 ---
 
+#### CHAR_LENGTH
+
+This function retrieves how many characters in a string.
+
+> **Note**: **LENGTH** retrieves the length of a string as well, but the unit is bytes.
+
+```sql
+CHAR_LENGTH('string');
+SELECT CHAR_LENGTH('Hey!');
+```
+
+**Result:**
+
+```text
+| SELECT CHAR_LENGTH('Hey!') |
+|----------------------------|
+| 4                          |
+```
+
+---
