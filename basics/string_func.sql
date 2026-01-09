@@ -55,3 +55,20 @@ SELECT UPPER(title) FROM books;
 
 -- LOWER
 SELECT LOWER(author_fname) FROM books;
+
+-- INSERT
+SELECT INSERT('Hello World!', 6, 0, 'OMG');
+
+-- LEFT
+SELECT LEFT('Welcome to my house', 5);
+
+-- RIGHT
+SELECT RIGHT('Welcome to my house', 3);
+
+-- REPEAT
+SELECT REPEAT('lol!', 3);
+
+-- TRIM
+SELECT TRIM('  Boston is a beautiful city   ');
+
+SELECT TRIM(LEADING 'xxx' FROM 'xxxyyyzzzxxx');

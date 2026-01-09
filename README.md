@@ -47,6 +47,10 @@
       - [REVERSE](#reverse)
       - [CHAR\_LENGTH](#char_length)
       - [UPPER \& LOWER](#upper--lower)
+      - [INSERT](#insert)
+      - [LEFT \& RIGHT](#left--right)
+      - [REPEAT](#repeat)
+      - [TRIM](#trim)
 
 ---
 
@@ -552,3 +556,101 @@ SELECT LOWER('OH NO!');
 ```
 
 ---
+
+#### INSERT
+
+It's a **function** instead of a statement!
+
+And it has slightly differences with the **REPLACE** function.
+
+```sql
+INSERT('original_string', start_pos, replaced_char_amount, 'insert_string');
+SELECT INSERT('Hello World!', 6, 0, 'OMG');
+```
+
+**Result:**
+
+```text
+| SELECT INSERT('Hello World!', 6, 0, 'OMG') |
+|--------------------------------------------|
+| HelloOMG World!                            |
+```
+
+#### LEFT & RIGHT
+
+Return the leftmost or rightmost string.
+
+```sql
+LEFT('string', number_char);
+SELECT LEFT('Welcome to my house', 5);
+```
+
+**Result:**
+
+```text
+| SELECT LEFT('Welcome to my house', 5) |
+|---------------------------------------|
+| Welco                                 |
+```
+
+```sql
+RIGHT('string', number_char);
+SELECT RIGHT('Welcome to my house', 3);
+```
+
+**Result:**
+
+```text
+| SELECT RIGHT('Welcome to my house', 3) |
+|----------------------------------------|
+| use                                    |
+```
+
+#### REPEAT
+
+It repeats the string with the time of given number.
+
+```sql
+REPEAT('string', repeat_time);
+SELECT REPEAT('lol!', 3);
+```
+
+**Result:**
+
+```text
+| SELECT REPEAT('lol!', 3) |
+|--------------------------|
+| lol!lol!lol!             |
+```
+
+#### TRIM
+
+Remove the **head** and **end** space, but ignore the space between characters.
+
+It can also remove the specific text from **leading**, **both**, and **trailing**.
+
+```sql
+TRIM('string');
+SELECT TRIM('  Boston is a beautiful city   ');
+```
+
+**Result:**
+
+```text
+| SELECT TRIM('  Boston is a beautiful city   ') |
+|------------------------------------------------|
+| Boston is a beautiful city                     |
+```
+
+```sql
+TRIM(<[LEADING, BOTH, TRAILING]> 'text' FROM 'ori_string' )
+SELECT TRIM(LEADING 'xxx' FROM 'xxxyyyzzzxxx');
+```
+
+**Result:**
+
+```text
+| SELECT TRIM(LEADING 'xxx' FROM 'xxxyyyzzzxxx') |
+|------------------------------------------------|
+| yyyzzzxxx                                      |
+```
