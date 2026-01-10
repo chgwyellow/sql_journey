@@ -55,6 +55,7 @@
       - [DISTINCT](#distinct)
       - [ORDER BY](#order-by)
       - [LIMIT](#limit)
+      - [LIKE](#like)
 
 ---
 
@@ -703,3 +704,21 @@ SELECT book_id FROM books LIMIT 5;
 SELECT book_id FROM books LIMIT 2, 5; -- start from 3rd row
 ```
 
+---
+
+#### LIKE
+
+Ambiguous search, if you know an author of book but not clearly enough, such as 'David', 'Dave', 'Dae'? I'm not really sure, I can only ensure d stand with a.
+
+'**%**' is a wildcard, which means it can represents any characters with any length, so there can be no character or as many characters as you like.
+
+'**_** is a placeholder, which stands for a character length.
+
+What if I would like to search for the data with **%** or **_** in it?
+
+Escape wildcard (**\\**) is a good hand for you.
+
+```sql
+SELECT author_fname FROM books WHERE author_fname LIKE '%da%';
+SELECT * FROM books WHERE title LIKE '%\%%';
+```

@@ -32,3 +32,10 @@ ORDER BY released_year,
 SELECT book_id FROM books LIMIT 5;
 
 SELECT book_id FROM books LIMIT 2, 5;
+
+-- LIKE
+SELECT author_fname FROM books WHERE author_fname LIKE '%da%';
+
+SELECT * FROM books WHERE title LIKE '%:%';
+
+SELECT * FROM books WHERE title LIKE '%\%%';
