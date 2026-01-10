@@ -56,6 +56,9 @@
       - [ORDER BY](#order-by)
       - [LIMIT](#limit)
       - [LIKE](#like)
+    - [Aggregation Function](#aggregation-function)
+      - [COUNT](#count)
+      - [GROUP BY](#group-by)
 
 ---
 
@@ -721,4 +724,29 @@ Escape wildcard (**\\**) is a good hand for you.
 ```sql
 SELECT author_fname FROM books WHERE author_fname LIKE '%da%';
 SELECT * FROM books WHERE title LIKE '%\%%';
+```
+
+---
+
+### Aggregation Function
+
+#### COUNT
+
+To calculate the total rows in columns or table and return a value.
+
+**COUNT(*)** includes **NULL**, but COUNT particular column doesn't include **NULL**.
+
+```sql
+SELECT COUNT(*) AS total FROM books;
+SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+```
+
+---
+
+#### GROUP BY
+
+Summarizes or aggregates identical data into single rows.
+
+```sql
+SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
 ```
