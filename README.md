@@ -54,6 +54,7 @@
     - [Refine Selection](#refine-selection)
       - [DISTINCT](#distinct)
       - [ORDER BY](#order-by)
+      - [LIMIT](#limit)
 
 ---
 
@@ -687,3 +688,18 @@ SELECT title, released_year FROM books ORDER BY released_year DESC;
 ```
 
 ---
+
+#### LIMIT
+
+Control the number of result we get back.
+
+It usually come along with the sorted data.
+
+The default start row is index 0, so the real LIMIT should have two numbers.
+
+```sql
+LIMIT <start_row>, <return_number_of_rows>
+SELECT book_id FROM books LIMIT 5;
+SELECT book_id FROM books LIMIT 2, 5; -- start from 3rd row
+```
+

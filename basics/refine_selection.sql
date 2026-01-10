@@ -28,3 +28,7 @@ FROM books
 ORDER BY released_year,
     pages;
 
+-- LIMIT
+SELECT book_id FROM books LIMIT 5;
+
+SELECT book_id FROM books LIMIT 2, 5;
