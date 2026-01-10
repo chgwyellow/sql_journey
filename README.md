@@ -53,6 +53,7 @@
       - [TRIM](#trim)
     - [Refine Selection](#refine-selection)
       - [DISTINCT](#distinct)
+      - [ORDER BY](#order-by)
 
 ---
 
@@ -673,3 +674,16 @@ SELECT DISTINCT author_lname FROM books;
 SELECT DISTINCT CONCAT(author_fname, ' ', author_lname) FROM books;
 SELECT DISTINCT author_fname, author_lname FROM books; -- As the same above
 ```
+
+#### ORDER BY
+
+This clause can sort the value with the particular column or multiple columns simultaneously in ascending or descending, by the way, **ascending** is the default.
+
+Moreover, if we **alias** the column name, it's acceptable to ORDER BY as well.
+
+```sql
+SELECT book_id, released_year FROM books ORDER BY released_year;
+SELECT title, released_year FROM books ORDER BY released_year DESC;
+```
+
+---
