@@ -51,6 +51,8 @@
       - [LEFT \& RIGHT](#left--right)
       - [REPEAT](#repeat)
       - [TRIM](#trim)
+    - [Refine Selection](#refine-selection)
+      - [DISTINCT](#distinct)
 
 ---
 
@@ -653,4 +655,21 @@ SELECT TRIM(LEADING 'xxx' FROM 'xxxyyyzzzxxx');
 | SELECT TRIM(LEADING 'xxx' FROM 'xxxyyyzzzxxx') |
 |------------------------------------------------|
 | yyyzzzxxx                                      |
+```
+
+---
+
+### Refine Selection
+
+This topic aims to enhance the select result, such as limit the rows, eliminate the duplicates.
+
+#### DISTINCT
+
+Aiming to eliminate the duplicate values.
+
+```sql
+SELECT DISTINCT <columns> FROM <table>;
+SELECT DISTINCT author_lname FROM books;
+SELECT DISTINCT CONCAT(author_fname, ' ', author_lname) FROM books;
+SELECT DISTINCT author_fname, author_lname FROM books; -- As the same above
 ```
