@@ -59,6 +59,8 @@
     - [Aggregation Function](#aggregation-function)
       - [COUNT](#count)
       - [GROUP BY](#group-by)
+      - [MIN \& MAX](#min--max)
+      - [SUBQUERIES](#subqueries)
 
 ---
 
@@ -750,3 +752,34 @@ Summarizes or aggregates identical data into single rows.
 ```sql
 SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
 ```
+
+---
+
+#### MIN & MAX
+
+Return the minimum and maximum value.
+
+If we would like to select the data without the aggregation, it must use the **GROUP BY**.
+
+```sql
+SELECT author_lname, COUNT(*), MAX(pages) FROM books GROUP BY author_lname;
+SELECT author_lname, MIN(released_year) FROM books GROUP BY author_lname;
+```
+
+---
+
+#### SUBQUERIES
+
+Select values from another select.
+
+The subquery usually occurs at **WHERE** and **FROM** clauses.
+
+Suggestion: Write **WHERE** or **FROM** clause query first.
+
+```sql
+SELECT title, pages
+FROM books
+WHERE pages = 
+(SELECT MAX(pages) FROM books);
+```
+

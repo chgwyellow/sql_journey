@@ -7,20 +7,22 @@ FROM books
 WHERE title LIKE '%the%';
 
 -- GROUP BY
-SELECT
-	author_lname,
-	COUNT(*) AS book_written
-FROM
-	books
-GROUP BY
-	author_lname
-ORDER BY
-	book_written DESC;
+SELECT author_lname,
+    COUNT(*) AS book_written
+FROM books
+GROUP BY author_lname
+ORDER BY book_written DESC;
 
-SELECT
-    released_year,
+SELECT released_year,
     COUNT(*)
-FROM
-    books
-GROUP BY
-    released_year;
+FROM books
+GROUP BY released_year;
+
+-- Subquery
+SELECT title,
+    pages
+FROM books
+WHERE pages = (
+        SELECT MAX(pages)
+        FROM books
+    );
