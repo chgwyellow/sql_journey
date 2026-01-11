@@ -64,3 +64,9 @@ SELECT title,
         ELSE '***'
     END AS stock
 FROM books;
+
+-- IS NULL
+SELECT title,
+    stock_quantity
+FROM books
+WHERE author_lname is NULL;

@@ -138,3 +138,12 @@ FROM books;
 
 ---
 
+## IS NULL
+
+When you would like to filter the NULL, do not use `=`!
+
+**IS** is the key word to find **NULL**.
+
+```sql
+SELECT title, stock_quantity FROM books WHERE author_lname is NULL;
+```
