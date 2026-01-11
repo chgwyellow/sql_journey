@@ -31,6 +31,7 @@
     - [Refine Selection](./note/refine_selection.md)
     - [Aggregation Function](./note/aggregation_function.md)
     - [Date & Time](./note/date_time.md)
+    - [Logical Operators](./note/logical_operator.md)
 
 ---
 
@@ -69,5 +70,6 @@ Detailed notes for each topic have been organized into separate files for better
 - **[Refine Selection](./note/refine_selection.md)** - DISTINCT, ORDER BY, LIMIT, LIKE
 - **[Aggregation Function](./note/aggregation_function.md)** - COUNT, GROUP BY, MIN, MAX, SUM, AVG
 - **[Date & Time](./note/date_time.md)** - DATE, TIME, DATETIME types and related functions
+- **[Logical Operators](./note/logical_operator.md)** - AND, OR, BETWEEN, IN, CASE, and comparison operators
 
 ---

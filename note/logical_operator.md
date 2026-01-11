@@ -1,28 +1,28 @@
-# Logical Operator
+# Logical Operators
 
-There are many condition combination in the real world, so are they in the programming.
+In the real world, there are many condition combinations, and the same applies to programming.
 
-Logical operators can gather many conditions and make comparison.
+Logical operators allow you to combine multiple conditions and make comparisons.
 
->**NOTE:** When comparing the date type, using CAST() to convert the data to the corresponding type.
+> **NOTE:** When comparing date types, use CAST() to convert the data to the corresponding type.
 
 ## NOT EQUAL
 
-`!=` is the sign for **NOT EQUAL**.
+`!=` is the operator for **NOT EQUAL**.
 
-It eliminates the unnecessary data.
+It filters out unwanted data.
 
 ```sql
 SELECT title, released_year FROM books WHERE released_year != 2017;
 ```
 
->**NOTE:** Technically, `=` and `!=` are **COMPARISON** operators instead of logical operators.
+> **NOTE:** Technically, `=` and `!=` are **COMPARISON** operators rather than logical operators.
 
 ---
 
 ## NOT LIKE
 
-In short, returns the LIKE opposition.
+Returns the opposite of the LIKE condition.
 
 ```sql
 SELECT title FROM books WHERE title NOT LIKE '% %';
@@ -32,15 +32,15 @@ SELECT title FROM books WHERE title NOT LIKE '% %';
 
 ## GREATER THAN
 
-`>` is the sign of **GREATER THAN**.
+`>` is the operator for **GREATER THAN**.
 
-It doesn't include the value itself.
+It does not include the value itself (exclusive).
 
 ```sql
 SELECT * FROM books WHERE released_year > '2000';
 ```
 
-We can use `>` to make **True** of **False** result, which 1 is equal to True and vice versa.
+You can use `>` to produce a **True** or **False** result, where 1 equals True and 0 equals False.
 
 ```sql
 SELECT 80 > 100; -- 0
@@ -50,23 +50,23 @@ SELECT 80 > 100; -- 0
 
 ## LESS THAN
 
-`<` is the sign of **LESS THAN**.
+`<` is the operator for **LESS THAN**.
 
-Apparently, it's another side of **GREAT THAN**.
+It's the opposite of **GREATER THAN**.
 
 ```sql
 SELECT * FROM books WHERE released_year < '1995';
 ```
 
->**NOTE:** You can combine `=` with `<` and `>` to `<=` and `>=`.
+> **NOTE:** You can combine `=` with `<` and `>` to create `<=` and `>=`.
 
 ---
 
 ## AND
 
-Put multiple conditions together.
+Combines multiple conditions together.
 
-Only the **all** of conditions are True would return the result.
+Returns results only when **all** conditions are True.
 
 ```sql
 SELECT title, released_year FROM books WHERE author_lname = 'Eggers' AND released_year > 2000;
@@ -76,7 +76,7 @@ SELECT title, released_year FROM books WHERE author_lname = 'Eggers' AND release
 
 ## OR
 
-Put multiple conditions together as the **AND** can do, but **only one thing is True**, the whole thing is True.
+Combines multiple conditions together like **AND**, but returns results when **at least one** condition is True.
 
 ```sql
 SELECT title, released_year FROM books WHERE author_lname = 'David' OR released_year > 2000;
@@ -86,35 +86,35 @@ SELECT title, released_year FROM books WHERE author_lname = 'David' OR released_
 
 ## BETWEEN
 
-Choose a range of data.
+Selects values within a specified range (inclusive).
 
 ```sql
 BETWEEN X AND Y
 SELECT title, released_year FROM books WHERE released_year BETWEEN 2005 AND 2025;
 ```
 
->**NOTE:** You can use **NOT** BETWEEN X AND Y as well.
+> **NOTE:** You can also use **NOT BETWEEN X AND Y** to exclude a range.
 
 ---
 
 ## IN
 
-Select some values in a set, so you don't have to write lots of **OR** clause.
+Selects values that match any value in a specified set, eliminating the need for multiple **OR** clauses.
 
-You can use **NOT IN** as well.
+You can also use **NOT IN** to exclude values.
 
 ```sql
-<NOT> IN(sets)
-SELECT title, released_year FROM books WHERE author_lname in ('David', 'Carver', 'Lahiri');
+<NOT> IN(value1, value2, ...)
+SELECT title, released_year FROM books WHERE author_lname IN ('David', 'Carver', 'Lahiri');
 ```
 
 ---
 
 ## CASE
 
-This concept likes a decision tree.
+This concept is like a decision tree.
 
-In **CASE** statement, there are bunch of **WHEN...THEN** clause. They like the if statement in any other programming language.
+The **CASE** statement contains multiple **WHEN...THEN** clauses, similar to if-else statements in other programming languages.
 
 ```sql
 CASE...END
@@ -140,10 +140,10 @@ FROM books;
 
 ## IS NULL
 
-When you would like to filter the NULL, do not use `=`!
+When filtering for NULL values, do not use `=`!
 
-**IS** is the key word to find **NULL**.
+**IS** is the keyword used to find **NULL** values.
 
 ```sql
-SELECT title, stock_quantity FROM books WHERE author_lname is NULL;
+SELECT title, stock_quantity FROM books WHERE author_lname IS NULL;
 ```
