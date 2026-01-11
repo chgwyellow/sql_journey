@@ -4,6 +4,7 @@ CREATE TABLE people (
     birthtime TIME,
     birthdt DATETIME
 );
+
 INSERT INTO people (name, birthdate, birthtime, birthdt)
 VALUES (
         'Yoshi',
@@ -40,3 +41,8 @@ SELECT birthdate,
     MONTHNAME(birthdate)
 FROM people;
 
+-- DATEDIFF
+SELECT DATEDIFF(CURDATE(), '2025-12-21 04:23:14');
+
+-- DATEADD
+SELECT DATE_ADD(CURDATE(), interval 1 year);
