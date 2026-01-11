@@ -61,6 +61,7 @@
       - [GROUP BY](#group-by)
       - [MIN \& MAX](#min--max)
       - [SUBQUERIES](#subqueries)
+      - [SUM](#sum)
 
 ---
 
@@ -749,8 +750,12 @@ SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
 
 Summarizes or aggregates identical data into single rows.
 
+We can group by multiple columns.
+
 ```sql
 SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
+SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname, author_fname;
+SELECT CONCAT(author_fname, ' ', author_lname) AS author, COUNT(*) FROM books GROUP BY author;
 ```
 
 ---
@@ -783,3 +788,17 @@ WHERE pages =
 (SELECT MAX(pages) FROM books);
 ```
 
+---
+
+#### SUM
+
+It sum up the numbers to total.
+
+Using GROUP BY can sum up the particular value in groups.
+
+For the string columns, if there is any number in the value, MySQL will covert it to number type **implicitly**. However, the pure text value will be **0**, and **NULL** will be skipped.
+
+```sql
+SELECT SUM(pages) FROM books;
+SELECT author_lname, SUM(pages) AS pages FROM books GROUP BY author_lname, author_fname;
+```
