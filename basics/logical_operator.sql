@@ -33,3 +33,7 @@ SELECT title, released_year FROM books WHERE author_lname = 'David' OR released_
 
 -- BETWEEN
 SELECT title, released_year FROM books WHERE released_year BETWEEN 2005 AND 2025;
+
+-- IN
+SELECT title, released_year FROM books WHERE author_lname in ('David', 'Carver', 'Lahiri');
+

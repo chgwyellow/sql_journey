@@ -4,6 +4,8 @@ There are many condition combination in the real world, so are they in the progr
 
 Logical operators can gather many conditions and make comparison.
 
+>**NOTE:** When comparing the date type, using CAST() to convert the data to the corresponding type.
+
 ## NOT EQUAL
 
 `!=` is the sign for **NOT EQUAL**.
@@ -95,3 +97,13 @@ SELECT title, released_year FROM books WHERE released_year BETWEEN 2005 AND 2025
 
 ---
 
+## IN
+
+Select some values in a set, so you don't have to write lots of **OR** clause.
+
+You can use **NOT IN** as well.
+
+```sql
+<NOT> IN(sets)
+SELECT title, released_year FROM books WHERE author_lname in ('David', 'Carver', 'Lahiri');
+```
