@@ -60,3 +60,16 @@ SELECT * FROM books WHERE released_year < '1995';
 
 ---
 
+## AND
+
+Put multiple conditions together.
+
+Only the **all** of conditions are True would return the result.
+
+```sql
+SELECT title, released_year FROM books WHERE author_lname = 'Eggers' AND released_year > 2000;
+```
+
+---
+
+## 

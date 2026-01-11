@@ -17,4 +17,15 @@ WHERE released_year > '2000';
 SELECT 80 > 100;
 
 -- LESS THAN
-SELECT * FROM books WHERE pages < 200;
+SELECT *
+FROM books
+WHERE pages < 200;
+
+-- AND
+SELECT title,
+    released_year
+FROM books
+WHERE author_lname = 'Eggers'
+    AND released_year > 2000;
+
+    
