@@ -37,14 +37,40 @@ SELECT DATABASE();
 
 A table is a collection of related data held in a **structured** format within a database.
 
-**Data Types**
+### Data Types
+
+**String**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **CHAR(n)** | Fixed-length string | `'CA'`, `'NY'` |
+| **VARCHAR(n)** | Variable-length string | `'Hello World'`, `'SQL'` |
+
+If you insert a value whose length exceeds the limit, MySQL will raise an error.
+
+**Numerical**
 
 | Type | Description | Example |
 |------|-------------|---------|
 | **INT** | Integer - whole numbers | `42`, `1000`, `-5` |
-| **VARCHAR(n)** | Variable-length string | `'Hello World'`, `'SQL'` |
-| **DATE** | Date values | `'2026-01-07'` |
-| **DECIMAL(m,n)** | Decimal numbers | `19.99`, `100.50` |
+| **TINYINT** | Integer - range from -128 to 127 | Suitable for small numbers |
+| **DECIMAL(m,n)** | Decimal numbers with high precision but uses more storage | `19.99`, `100.50` |
+| **FLOAT** | Less precise than DECIMAL, 4 bytes storage with ~7 digits precision | `20.7384963` |
+| **DOUBLE** | Similar to FLOAT, 8 bytes storage with ~15 digits precision | `193.1249672063` |
+
+For integers, **INT** is usually the best choice.
+
+For **DECIMAL(m,n)**: `m` represents the total number of digits, and `n` represents the number of digits after the decimal point.
+
+**Choosing between DECIMAL and FLOAT/DOUBLE**: Use DECIMAL for exact precision (e.g., financial data), and FLOAT/DOUBLE for approximate values where performance matters.
+
+**Date**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **DATE** | Date values (YYYY-MM-DD) | `'2026-01-07'` |
+| **TIME** | Time values (HH:MM:SS) | `'17:32:46'` |
+| **DATETIME** | Date and Time values (YYYY-MM-DD HH:MM:SS) | `'2026-10-21 06:25:53'` |
 
 **String Handling Tips**
 
