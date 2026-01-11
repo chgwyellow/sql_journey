@@ -28,4 +28,8 @@ FROM books
 WHERE author_lname = 'Eggers'
     AND released_year > 2000;
 
-    
+-- OR
+SELECT title, released_year FROM books WHERE author_lname = 'David' OR released_year > 2000;
+
+-- BETWEEN
+SELECT title, released_year FROM books WHERE released_year BETWEEN 2005 AND 2025;

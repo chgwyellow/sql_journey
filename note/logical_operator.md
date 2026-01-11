@@ -72,4 +72,26 @@ SELECT title, released_year FROM books WHERE author_lname = 'Eggers' AND release
 
 ---
 
-## 
+## OR
+
+Put multiple conditions together as the **AND** can do, but **only one thing is True**, the whole thing is True.
+
+```sql
+SELECT title, released_year FROM books WHERE author_lname = 'David' OR released_year > 2000;
+```
+
+---
+
+## BETWEEN
+
+Choose a range of data.
+
+```sql
+BETWEEN X AND Y
+SELECT title, released_year FROM books WHERE released_year BETWEEN 2005 AND 2025;
+```
+
+>**NOTE:** You can use **NOT** BETWEEN X AND Y as well.
+
+---
+
