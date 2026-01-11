@@ -64,3 +64,32 @@ SELECT birthdate, MONTHNAME(birthdate) FROM people;
 
 ## TIME Functions
 
+### HOUR
+
+It returns the hour of time.
+
+```sql
+SELECT birthtime, HOUR(birthtime) FROM people;
+```
+
+---
+
+### MINUTE
+
+It returns the minute of time.
+
+```sql
+SELECT birthtime, MINUTE(birthtime) FROM people;
+```
+
+---
+
+### SECOND
+
+It returns the second of time.
+
+```sql
+SELECT birthtime, SECOND(birthtime) FROM people;
+```
+
+---
