@@ -107,3 +107,34 @@ You can use **NOT IN** as well.
 <NOT> IN(sets)
 SELECT title, released_year FROM books WHERE author_lname in ('David', 'Carver', 'Lahiri');
 ```
+
+---
+
+## CASE
+
+This concept likes a decision tree.
+
+In **CASE** statement, there are bunch of **WHEN...THEN** clause. They like the if statement in any other programming language.
+
+```sql
+CASE...END
+SELECT title, released_year,
+CASE 
+    WHEN released_year >= 2000 THEN 'modern lit' 
+    ELSE '20th century lit'
+END AS 'genre'
+FROM books;
+```
+
+```sql
+SELECT title, stock_quantity,
+CASE
+    WHEN stock_quantity BETWEEN 0 AND 50 THEN '*',
+    WHEN stock_quantity BETWEEN 51 AND 100 THEN '**',
+    ELSE '***'
+END AS stock
+FROM books;
+```
+
+---
+
