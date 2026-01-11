@@ -62,6 +62,7 @@
       - [MIN \& MAX](#min--max)
       - [SUBQUERIES](#subqueries)
       - [SUM](#sum)
+      - [AVG](#avg)
 
 ---
 
@@ -802,3 +803,16 @@ For the string columns, if there is any number in the value, MySQL will covert i
 SELECT SUM(pages) FROM books;
 SELECT author_lname, SUM(pages) AS pages FROM books GROUP BY author_lname, author_fname;
 ```
+
+---
+
+#### AVG
+
+Stands for average, which is equal to **sum / length**.
+
+```sql
+SELECT released_year, AVG(pages) FROM books GROUP BY released_year;
+SELECT author_lname, AVG(released_year) FROM books GROUP BY author_lname;
+```
+
+---
