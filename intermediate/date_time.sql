@@ -23,3 +23,20 @@ VALUES (
         '18:19:53',
         '2003-01-26 18:19:53'
     );
+
+SELECT birthdate,
+    DAY(birthdate)
+FROM people;
+
+SELECT birthdate,
+    DAYOFWEEK(birthdate)
+FROM people;
+
+SELECT birthdate,
+    DAYOFYEAR(birthdate)
+FROM people;
+
+SELECT birthdate,
+    MONTHNAME(birthdate)
+FROM people;
+
