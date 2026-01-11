@@ -1,7 +1,9 @@
 # DATE & TIME
 
 **CURDATE()** retrieves the current date.
+
 **CURTIME()** retrieves the current time.
+
 **NOW()** returns the current timestamp (date and time).
 
 In MySQL, DATETIME and TIMESTAMP are similar; the primary difference is their storage capacity.
