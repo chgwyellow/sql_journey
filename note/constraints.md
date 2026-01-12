@@ -59,9 +59,9 @@ CREATE TABLE orders (
 
 ## UNIQUE
 
-The value should be unique and the PRIMARY KEY has been established, this time, you can use **UNIQUE** to limit the column constraint.
+Ensures that all values in a column are unique. Use **UNIQUE** when you need uniqueness but the column is not the PRIMARY KEY.
 
-**UNIQUE** can not be **NULL**.
+> **Note**: Unlike PRIMARY KEY, a UNIQUE column **can** contain NULL values (and multiple NULLs are allowed in most databases).
 
 ```sql
 CREATE TABLE contacts (
@@ -74,9 +74,9 @@ CREATE TABLE contacts (
 
 ## CHECK
 
-Define the condition for the specific column.
+Defines a condition that values in a column must satisfy.
 
-If the value doesn't pass the CHECK, the whole row will be invalid and deny to insert.
+If a value doesn't pass the CHECK constraint, the entire row insertion will be rejected.
 
 ```sql
 CHECK(expr)
@@ -93,9 +93,9 @@ CREATE TABLE palindromes (
 
 ## Named CONSTRAINT
 
-You can define a CONSTRAINT yourself, it is like to add a CHECK after the column name.
+You can give constraints custom names for easier identification and management.
 
-As defining a function in any other programming languages, you have to **name** this CONSTRAINT.
+Like defining a function in other programming languages, you must **name** the CONSTRAINT.
 
 ```sql
 CREATE TABLE users (
@@ -107,9 +107,9 @@ CREATE TABLE users (
 
 ---
 
-## Multiple columns CONSTRAINT
+## Multiple Column Constraints
 
-You can make a CONSTRAINT for multiple columns, it is like a combination.
+You can create constraints that apply to multiple columns together, creating a composite constraint.
 
 ```sql
 CREATE TABLE companies (
@@ -119,7 +119,7 @@ CREATE TABLE companies (
     address VARCHAR(255) NOT NULL,
     CONSTRAINT name_address UNIQUE (name, address)
 );
--- Name and address combine together to be UNIQUE, but either of them should be UNIQUE
+-- The combination of name and address must be UNIQUE, but individually they don't need to be
 
 CREATE TABLE houses (
     purchase_price INT NOT NULL,
