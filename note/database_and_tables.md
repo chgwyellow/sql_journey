@@ -89,3 +89,97 @@ INSERT INTO restaurants (name) VALUES ('Domino\'s Pizza');
 -- Double quotes inside strings are fine
 INSERT INTO quotes (text) VALUES ('She said "Hello!"');
 ```
+
+---
+
+### ALTER TABLE
+
+Modifies the structure of an existing table.
+
+> **Note**: When adding a column with **NOT NULL** constraint but no **DEFAULT** value, existing rows will be filled with **empty string** for text columns and **0** for numeric columns.
+
+#### ADD COLUMN
+
+Adds new columns to an existing table.
+
+```sql
+ALTER TABLE <table_name>
+ADD COLUMN <column_name> <data_type>;
+ALTER TABLE companies
+ADD COLUMN city VARCHAR(25);
+ALTER TABLE companies
+ADD COLUMN phone VARCHAR(15) NOT NULL;
+```
+
+#### DROP COLUMN
+
+Removes a column from an existing table.
+
+```sql
+ALTER TABLE <table_name>
+DROP COLUMN <column_name>;
+ALTER TABLE companies
+DROP COLUMN city;
+```
+
+#### RENAME
+
+Renames a table or column.
+
+```sql
+-- RENAME TABLE
+RENAME TABLE <old_table> TO <new_table>;
+RENAME TABLE companies TO suppliers;
+```
+
+```sql
+-- RENAME COLUMN
+ALTER TABLE <table_name>
+RENAME COLUMN <old_col> TO <new_col>;
+ALTER TABLE suppliers
+RENAME COLUMN phone TO cellphone;
+```
+
+#### MODIFY
+
+Changes a column's data type or attributes.
+
+> **Warning**: Converting data types (e.g., from string to numeric or vice versa) can cause data loss or unexpected results.
+
+```sql
+ALTER TABLE <table_name>
+MODIFY <col> <data_type>;
+ALTER TABLE suppliers
+MODIFY name VARCHAR(150);
+```
+
+**CHANGE** - Renames a column and optionally changes its data type.
+
+```sql
+ALTER TABLE <table_name>
+CHANGE <old_col> <new_col> <data_type>;
+ALTER TABLE suppliers
+CHANGE name company_name VARCHAR(255);
+```
+
+#### ALTER CONSTRAINTS
+
+Adds or removes constraints from a table.
+
+```sql
+-- Add constraint
+ALTER TABLE <table_name>
+ADD CONSTRAINT <constraint_name> CHECK(expr);
+ALTER TABLE house
+ADD CONSTRAINT positive_price CHECK(purchase_price >= 0);
+```
+
+Drop constraints from table.
+
+```sql
+-- Drop constraint
+ALTER TABLE <table_name>
+DROP CONSTRAINT <constraint_name>;
+ALTER TABLE house
+DROP CONSTRAINT positive_price;
+```

@@ -62,7 +62,7 @@ SQL_Mastery_Journey/
 Detailed notes for each topic have been organized into separate files for better navigation:
 
 - **[What is Database?](./note/what_is_database.md)** - Understanding databases and DBMS
-- **[Database and Tables](./note/database_and_tables.md)** - Database structure and data types
+- **[Database and Tables](./note/database_and_tables.md)** - Database structure, data types, and ALTER TABLE operations
 - **[Insert Data](./note/insert_data.md)** - Adding data to tables
 - **[Constraints](./note/constraints.md)** - NOT NULL, DEFAULT, PRIMARY KEY, AUTO_INCREMENT, UNIQUE, CHECK
 - **[CRUD Operations](./note/crud_operations.md)** - CREATE, READ, UPDATE, DELETE operations
