@@ -61,3 +61,12 @@ CREATE TABLE contacts (
     phone VARCHAR(15) UNIQUE
 );
 
+--CHECK
+CREATE TABLE users (
+    username VARCHAR(20) NOT NULL,
+    age INT CHECK(age > 0)
+);
+
+CREATE TABLE palindrome (
+    word VARCHAR(100) CHECK(REVERSE(word) = word)
+);

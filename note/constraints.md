@@ -70,3 +70,23 @@ CREATE TABLE contacts (
 );
 ```
 
+---
+
+## CHECK
+
+Define the condition for the specific column.
+
+If the value doesn't pass the CHECK, the whole row will be invalid and deny to insert.
+
+```sql
+CHECK(expr)
+CREATE TABLE users (
+    username VARCHAR(20) NOT NULL,
+    age INT CHECK(age > 0)
+);
+CREATE TABLE palindromes (
+    word VARCHAR(100) CHECK(REVERSE(word) = word)
+);
+```
+
+---
