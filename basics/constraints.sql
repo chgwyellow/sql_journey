@@ -78,3 +78,8 @@ CREATE TABLE users (
     CONSTRAINT age_not_negative CHECK(age >= 0)
 );
 
+CREATE TABLE houses (
+    purchase_price INT NOT NULL,
+    sale_price INT NOT NULL,
+    CONSTRAINT make_money CHECK(sale_price > purchase_price)
+);

@@ -104,3 +104,26 @@ CREATE TABLE users (
     CONSTRAINT age_not_negative CHECK(age >= 0)
 );
 ```
+
+---
+
+## Multiple columns CONSTRAINT
+
+You can make a CONSTRAINT for multiple columns, it is like a combination.
+
+```sql
+CREATE TABLE companies (
+    supplier_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) NOT NULL UNIQUE,
+    address VARCHAR(255) NOT NULL,
+    CONSTRAINT name_address UNIQUE (name, address)
+);
+-- Name and address combine together to be UNIQUE, but either of them should be UNIQUE
+
+CREATE TABLE houses (
+    purchase_price INT NOT NULL,
+    sale_price INT NOT NULL,
+    CONSTRAINT make_money CHECK(sale_price > purchase_price)
+);
+```
