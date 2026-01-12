@@ -90,3 +90,17 @@ CREATE TABLE palindromes (
 ```
 
 ---
+
+## Named CONSTRAINT
+
+You can define a CONSTRAINT yourself, it is like to add a CHECK after the column name.
+
+As defining a function in any other programming languages, you have to **name** this CONSTRAINT.
+
+```sql
+CREATE TABLE users (
+    username VARCHAR(20) NOT NULL,
+    age INT,
+    CONSTRAINT age_not_negative CHECK(age >= 0)
+);
+```

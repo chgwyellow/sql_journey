@@ -61,7 +61,7 @@ CREATE TABLE contacts (
     phone VARCHAR(15) UNIQUE
 );
 
---CHECK
+-- CHECK
 CREATE TABLE users (
     username VARCHAR(20) NOT NULL,
     age INT CHECK(age > 0)
@@ -70,3 +70,11 @@ CREATE TABLE users (
 CREATE TABLE palindrome (
     word VARCHAR(100) CHECK(REVERSE(word) = word)
 );
+
+-- CONSTRAINT
+CREATE TABLE users (
+    username VARCHAR(20) NOT NULL,
+    age INT,
+    CONSTRAINT age_not_negative CHECK(age >= 0)
+);
+
