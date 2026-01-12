@@ -54,3 +54,19 @@ CREATE TABLE orders (
 - Perfect companion to `PRIMARY KEY`
 - Automatically increments starting from 1
 - No need to manually assign ID values
+
+---
+
+## UNIQUE
+
+The value should be unique and the PRIMARY KEY has been established, this time, you can use **UNIQUE** to limit the column constraint.
+
+**UNIQUE** can not be **NULL**.
+
+```sql
+CREATE TABLE contacts (
+    name VARCHAR(100),
+    phone VARCHAR(15) UNIQUE
+);
+```
+
