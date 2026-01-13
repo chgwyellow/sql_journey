@@ -32,6 +32,7 @@
     - [Aggregation Function](./note/aggregation_function.md)
     - [Date & Time](./note/date_time.md)
     - [Logical Operators](./note/logical_operator.md)
+    - [Joins & Relationships](./note/join.md)
 
 ---
 
@@ -71,5 +72,6 @@ Detailed notes for each topic have been organized into separate files for better
 - **[Aggregation Function](./note/aggregation_function.md)** - COUNT, GROUP BY, MIN, MAX, SUM, AVG
 - **[Date & Time](./note/date_time.md)** - DATE, TIME, DATETIME types and related functions
 - **[Logical Operators](./note/logical_operator.md)** - AND, OR, BETWEEN, IN, CASE, and comparison operators
+- **[Joins & Relationships](./note/join.md)** - INNER JOIN, LEFT JOIN, RIGHT JOIN, Foreign Keys, and ON DELETE CASCADE
 
 ---
