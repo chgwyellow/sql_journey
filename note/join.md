@@ -38,6 +38,8 @@
 
     This is `relatively common` in real-world applications.
 
+    In this case, we usually create a table to summary all child tables.
+
 ---
 
 ## Joins
