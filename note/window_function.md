@@ -17,3 +17,41 @@ SELECT emp_no, department, salary, AVG(salary) OVER()
 FROM employees e ;
 ```
 
+---
+
+## PARTITION BY
+
+Inside of the `OVER()`, use `PARTITION BY` to form rows into groups of row.
+
+The concept of `PARTITION BY` is to cut the large window to many piece of small windows.
+
+It's a little bit like using the `GROUP BY` clause in `OVER()`.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ SUM(salary) OVER(PARTITION BY department) AS dept_payroll,
+ SUM(salary) OVER() AS total_payroll
+FROM employees e ;
+```
+
+---
+
+## ORDER BY
+
+Inside of the `OVER()`, use `ORDER BY` to re-order rows within each window.
+
+In this case, it can make `rolling`.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ SUM(salary) OVER(PARTITION BY department ORDER BY salary) AS rolling_dept_payroll,
+ SUM(salary) OVER(PARTITION BY department) AS dept_payroll
+FROM employees e ;
+```
+
