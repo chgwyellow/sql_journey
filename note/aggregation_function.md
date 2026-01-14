@@ -80,3 +80,60 @@ Calculates the average value, which equals **sum / count**.
 SELECT released_year, AVG(pages) FROM books GROUP BY released_year;
 SELECT author_lname, AVG(released_year) FROM books GROUP BY author_lname;
 ```
+
+---
+
+## HAVING
+
+Filters data **after** it has been grouped by aggregation functions.
+
+**Key Difference**:
+
+- **WHERE** filters rows **before** grouping
+- **HAVING** filters groups **after** aggregation
+
+```sql
+SELECT 
+    title, 
+    AVG(rating),
+    COUNT(rating) AS review_count
+FROM full_reviews 
+GROUP BY title HAVING COUNT(rating) > 1;
+```
+
+```sql
+-- Example: Find authors with more than 3 books
+SELECT author_lname, COUNT(*) AS book_count
+FROM books
+GROUP BY author_lname
+HAVING COUNT(*) > 3;
+```
+
+---
+
+## ROLLUP
+
+Creates a summary row (super-aggregate) for grouped data, providing subtotals and grand totals.
+
+The **ROLLUP** modifier generates additional rows showing aggregated values at different levels of grouping.
+
+```sql
+SELECT 
+    title, AVG(rating)
+FROM
+    full_reviews
+GROUP BY title WITH ROLLUP;
+```
+
+```sql
+-- Example: Show total pages per author with grand total
+SELECT 
+    author_lname, 
+    COUNT(*) AS books, 
+    SUM(pages) AS total_pages
+FROM books
+GROUP BY author_lname WITH ROLLUP;
+-- The last row will show NULL for author_lname and totals for all authors
+```
+
+**Note**: The ROLLUP row displays **NULL** for the grouped column(s) and shows the overall aggregate value.
