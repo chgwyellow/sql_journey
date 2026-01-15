@@ -128,3 +128,21 @@ FROM employees;
 ```
 
 ---
+
+## FIRST VALUE
+
+Return the first value in every window.
+
+There is a function called `NTH_VALUE(n, expr)` which retrieves the nth value in windows.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ FIRST_VALUE(emp_no) OVER(PARTITION BY department ORDER BY salary DESC) AS highest_paid_dept,
+ FIRST_VALUE(emp_no) OVER(ORDER BY salary DESC) AS highest_paid_overall
+FROM employees;
+```
+
+---
