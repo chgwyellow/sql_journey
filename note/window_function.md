@@ -8,7 +8,7 @@ Windows like groups of data that is somehow grouped together in some way.
 
 ## OVER
 
-The OVER() clause constructs a window.
+The `OVER()` clause constructs a window.
 
 When it's empty, the window will include all records.
 
@@ -55,3 +55,25 @@ SELECT
 FROM employees e ;
 ```
 
+## RANK
+
+Returns the `rank` of the current row within its partition, with gaps.
+
+Any same values in the window are same will be considered the `same` rank.
+
+It skips the duplicates rank.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ RANK() OVER(ORDER BY salary DESC) AS overall_salary_rank
+FROM employees e ;
+```
+
+---
+
+## DENSE RANK
+
+## ROW NUMBER
