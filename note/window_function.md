@@ -76,4 +76,37 @@ FROM employees e ;
 
 ## DENSE RANK
 
+DENSE RANK doesn't like RANK, it won't skip any rank.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ ROW_NUMBER() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_row_number,
+ RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_salary_rank,
+ RANK() OVER(ORDER BY salary DESC) AS overall_rank,
+ DENSE_RANK() OVER(ORDER BY salary DESC) AS overall_dense_rank
+FROM employees e 
+ORDER BY overall_rank;
+```
+
+---
+
 ## ROW NUMBER
+
+Return the `number of the current row` within its partition.
+
+The number range from 1 to the number of partition rows.
+
+```sql
+SELECT
+ emp_no,
+ department,
+ salary,
+ ROW_NUMBER() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_row_number,
+ RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_salary_rank,
+ RANK() OVER(ORDER BY salary DESC) AS overall_salary_rank
+FROM employees e 
+ORDER BY department;
+```
