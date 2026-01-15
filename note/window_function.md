@@ -110,3 +110,12 @@ SELECT
 FROM employees e 
 ORDER BY department;
 ```
+
+---
+
+## NTILE
+
+Designate a number `n` to separate the window data to `n` pieces.
+
+```sql
+
