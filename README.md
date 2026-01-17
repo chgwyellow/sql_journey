@@ -26,6 +26,7 @@
     - [Functions](#functions)
   - [About This Project](#about-this-project)
   - [Project Structure](#project-structure)
+    - [Directory Details](#directory-details)
 
 ---
 
@@ -49,6 +50,7 @@
 - [JOIN](./note/join.md)
 - [View](./note/view.md)
 - [Window Function](./note/window_function.md)
+- [Database Trigger](./note/database_trigger.md)
 
 ### Functions
 
@@ -68,12 +70,24 @@ This repository serves as my personal learning journal for mastering SQL. All qu
 
 ## Project Structure
 
-```
+```plaintext
 SQL_Mastery_Journey/
-├── basics/          # Fundamental SQL syntax
-├── intermediate/    # Advanced SQL techniques
-├── advanced/        # Expert-level SQL topics
-├── challenges/      # SQL challenges and exercises
-├── note/            # Detailed learning notes
+├── basics/          # Fundamental SQL syntax and basic operations (7 files)
+├── intermediate/    # Intermediate SQL techniques (2 files)
+├── advanced/        # Advanced SQL topics (4 files)
+├── challenges/      # SQL practice challenges and exercises (8 files)
+├── note/            # Detailed learning notes in Markdown (14 files)
+├── data/            # Sample datasets for practice
+├── project/         # Real-world SQL projects (e.g., Instagram clone)
 └── README.md        # You are here!
 ```
+
+### Directory Details
+
+- **`basics/`**: Core SQL fundamentals including CRUD operations, constraints, data types, and string functions
+- **`intermediate/`**: Aggregation functions and date/time operations
+- **`advanced/`**: Complex topics like JOINs, window functions, triggers, and many-to-many relationships
+- **`challenges/`**: Practice exercises covering various SQL concepts
+- **`note/`**: Comprehensive markdown documentation for each topic (linked in Learning Notes section)
+- **`data/`**: Sample data files (books, TV shows) for hands-on practice
+- **`project/`**: Complete database projects with schema and sample data
