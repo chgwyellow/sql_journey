@@ -4,7 +4,7 @@
 
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-00758F?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![DBeaver](https://img.shields.io/badge/Tool-DBeaver-382923?style=flat-square&logo=dbeaver&logoColor=white)](https://dbeaver.io/)
-![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
 ![Last Update](https://img.shields.io/badge/Updated-Jan%202026-green?style=flat-square)
 
 **A comprehensive journey through SQL fundamentals and beyond**
@@ -50,6 +50,7 @@
 - [JOIN](./note/join.md)
 - [View](./note/view.md)
 - [Window Function](./note/window_function.md)
+- [CTE (Common Table Expression)](./note/cte.md)
 - [Database Trigger](./note/database_trigger.md)
 
 ### Functions
